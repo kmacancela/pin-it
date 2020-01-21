@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_secure_password
+  # has_secure_password
   has_many :user_services, dependent: :destroy
   has_many :services, through: :user_services
   has_many :transactions

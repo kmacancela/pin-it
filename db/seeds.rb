@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 Transaction.destroy_all
 Message.destroy_all
 UserService.destroy_all
@@ -18,14 +10,14 @@ UserService.reset_pk_sequence
 User.reset_pk_sequence
 Service.reset_pk_sequence
 
-user1 = User.create!(first_name: 'Karina', last_name: 'Macancela', email: 'karymacancela@gmail.com', tailor: true, zipcode: '11211', bio: 'Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here.', password_digest: 'karina')
-# user1.password = 'karina'
+user1 = User.create!(first_name: 'Karina', last_name: 'Macancela', email: 'karymacancela@gmail.com', tailor: true, zipcode: '11211', bio: 'Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here.')
+user1.password = 'karina'
 
-user2 = User.create!(first_name: 'Mark', last_name: 'Jones', email: 'mjones@gmail.com', tailor: true, zipcode: '10011', bio: 'Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here.', password_digest: 'mark')
-# user2.password = 'mark'
+user2 = User.create!(first_name: 'Mark', last_name: 'Jones', email: 'mjones@gmail.com', tailor: true, zipcode: '10011', bio: 'Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here.')
+user2.password = 'mark'
 
-user3 = User.create!(first_name: 'Emily', last_name: 'Kim', email: 'ekim@gmail.com', tailor: false, zipcode: '11345', bio: 'Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here.', password_digest: 'emily')
-# user3.password = 'emily'
+user3 = User.create!(first_name: 'Emily', last_name: 'Kim', email: 'ekim@gmail.com', tailor: false, zipcode: '11345', bio: 'Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here.')
+user3.password = 'emily'
 
 service1 = Service.create(name: 'Travel')
 service2 = Service.create(name: 'Waist alteration')

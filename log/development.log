@@ -49833,3 +49833,1351 @@ puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
 puma (4.3.0) lib/puma/server.rb:470:in `process_client'
 puma (4.3.0) lib/puma/server.rb:328:in `block in run'
 puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/login" for ::1 at 2020-01-17 15:38:51 -0500
+  [1m[35m (22.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"e", "password"=>"[FILTERED]", "login"=>{"email"=>"e", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (37.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'e') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 58ms (Views: 3.3ms | ActiveRecord: 44.1ms | Allocations: 5045)
+
+
+Started GET "/messages" for ::1 at 2020-01-17 15:39:06 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (9.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:5:in `index'
+No serializer found for resource: #<Message id: 1, sender_id: 1, receiver_id: 2, title: "Quick question...", body: "Hey! Would you be able to tailor some jeans in tim...", message_date: "11-20-2019", created_at: "2020-01-15 00:59:59", updated_at: "2020-01-15 00:59:59">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Message::ActiveRecord_Relation (0.75ms)
+Completed 200 OK in 64ms (Views: 11.7ms | ActiveRecord: 47.5ms | Allocations: 7528)
+
+
+Started GET "/user" for ::1 at 2020-01-17 15:39:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.6) lib/rack/cors.rb:98:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-01-17 15:39:16 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+No serializer found for resource: #<User id: 1, first_name: "Karina", last_name: "Macancela", email: "karymacancela@gmail.com", password_digest: "karina", created_at: "2020-01-15 00:59:59", updated_at: "2020-01-15 00:59:59", tailor: true, zipcode: "11211", bio: "Some description here. Some description here. Some...">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.96ms)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 3.6ms | Allocations: 7485)
+
+
+Started GET "/login" for ::1 at 2020-01-17 15:39:20 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for LoginController):
+  
+actionpack (6.0.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.6) lib/rack/cors.rb:98:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/login" for ::1 at 2020-01-17 15:40:15 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 1.0ms | Allocations: 790)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-17 15:40:41 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms | Allocations: 790)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-17 15:40:47 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms | Allocations: 775)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-17 15:46:16 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.9ms | Allocations: 775)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-17 15:48:21 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"e", "password"=>"[FILTERED]", "login"=>{"email"=>"e", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'e') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.44ms)
+Completed 422 Unprocessable Entity in 13ms (Views: 2.1ms | ActiveRecord: 2.9ms | Allocations: 5045)
+
+
+Started POST "/login" for ::1 at 2020-01-17 15:48:40 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 6.1ms | Allocations: 6711)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-17 15:50:01 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 7.1ms | Allocations: 10424)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-17 15:50:04 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (16.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 16.3ms | Allocations: 795)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-17 15:50:15 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.3ms | Allocations: 793)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-17 15:55:45 -0500
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 7.2ms | Allocations: 10337)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-17 15:55:54 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.7ms | Allocations: 794)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-17 15:58:14 -0500
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 8.6ms | Allocations: 10581)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-18 16:39:21 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 4.1ms | Allocations: 863)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-18 16:39:28 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 794)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-18 16:54:17 -0500
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 19.0ms | Allocations: 10493)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-01-18 16:55:51 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.co", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.co') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 13ms (Views: 10.8ms | ActiveRecord: 0.5ms | Allocations: 2953)
+
+
+Started POST "/login" for ::1 at 2020-01-18 16:56:43 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"mjones@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"mjones@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'mjones@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms | Allocations: 795)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-01-18 16:58:30 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.9ms | Allocations: 793)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-01-18 16:58:36 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.co", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.co') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 9ms (Views: 0.5ms | ActiveRecord: 6.5ms | Allocations: 857)
+
+
+Started POST "/login" for ::1 at 2020-01-18 16:58:44 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.9ms | Allocations: 776)
+
+
+  
+BCrypt::Errors::InvalidSalt (invalid salt):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (49.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (12.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (1.0ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (1.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserService Load (2.4ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUserService Load (0.5ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (44.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Karina"], ["last_name", "Macancela"], ["email", "karymacancela@gmail.com"], ["created_at", "2020-01-18 22:16:49.191010"], ["updated_at", "2020-01-18 22:16:49.191010"], ["tailor", true], ["zipcode", "11211"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "mjones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Mark"], ["last_name", "Jones"], ["email", "mjones@gmail.com"], ["created_at", "2020-01-18 22:16:49.460696"], ["updated_at", "2020-01-18 22:16:49.460696"], ["tailor", true], ["zipcode", "10011"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ekim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Emily"], ["last_name", "Kim"], ["email", "ekim@gmail.com"], ["created_at", "2020-01-18 22:16:49.678784"], ["updated_at", "2020-01-18 22:16:49.678784"], ["tailor", false], ["zipcode", "11345"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.9ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2020-01-18 22:16:49.899539"], ["updated_at", "2020-01-18 22:16:49.899539"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waist alteration"], ["created_at", "2020-01-18 22:16:49.903514"], ["updated_at", "2020-01-18 22:16:49.903514"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bridal dress alteration"], ["created_at", "2020-01-18 22:16:49.906691"], ["updated_at", "2020-01-18 22:16:49.906691"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Same-day"], ["created_at", "2020-01-18 22:16:49.909877"], ["updated_at", "2020-01-18 22:16:49.909877"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.4ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 1], ["description", "I am willing to travel within reason."], ["price", 50], ["created_at", "2020-01-18 22:16:49.920060"], ["updated_at", "2020-01-18 22:16:49.920060"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (1.2ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 2], ["description", "Willing to do quick alteration. I have alot of experience!"], ["price", 60], ["created_at", "2020-01-18 22:16:49.923622"], ["updated_at", "2020-01-18 22:16:49.923622"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.4ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["service_id", 4], ["description", "Totally possible to complete your alterations within the same day for an extra fee."], ["price", 50], ["created_at", "2020-01-18 22:16:49.928597"], ["updated_at", "2020-01-18 22:16:49.928597"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["service_id", 3], ["price", 100], ["created_at", "2020-01-18 22:16:49.942731"], ["updated_at", "2020-01-18 22:16:49.942731"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.9ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "12-01-2019"], ["created_at", "2020-01-18 22:16:49.954160"], ["updated_at", "2020-01-18 22:16:49.954160"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "11-30-2019"], ["created_at", "2020-01-18 22:16:49.958465"], ["updated_at", "2020-01-18 22:16:49.958465"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["tailor_id", 2], ["customer_id", 3], ["booking_date", "11-20-2019"], ["created_at", "2020-01-18 22:16:49.962188"], ["updated_at", "2020-01-18 22:16:49.962188"], ["completed", true], ["rating", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("sender_id", "receiver_id", "title", "body", "message_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["sender_id", 1], ["receiver_id", 2], ["title", "Quick question..."], ["body", "Hey! Would you be able to tailor some jeans in time for thanksgiving?"], ["message_date", "11-20-2019"], ["created_at", "2020-01-18 22:16:49.971775"], ["updated_at", "2020-01-18 22:16:49.971775"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.4ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (1.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.5ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserService Load (0.7ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.3ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.5ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (2.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (1.9ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Karina"], ["last_name", "Macancela"], ["email", "karymacancela@gmail.com"], ["created_at", "2020-01-18 22:18:21.238771"], ["updated_at", "2020-01-18 22:18:21.238771"], ["tailor", true], ["zipcode", "11211"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "mjones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Mark"], ["last_name", "Jones"], ["email", "mjones@gmail.com"], ["created_at", "2020-01-18 22:18:21.542937"], ["updated_at", "2020-01-18 22:18:21.542937"], ["tailor", true], ["zipcode", "10011"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ekim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Emily"], ["last_name", "Kim"], ["email", "ekim@gmail.com"], ["created_at", "2020-01-18 22:18:21.761326"], ["updated_at", "2020-01-18 22:18:21.761326"], ["tailor", false], ["zipcode", "11345"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.5ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2020-01-18 22:18:21.980483"], ["updated_at", "2020-01-18 22:18:21.980483"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waist alteration"], ["created_at", "2020-01-18 22:18:21.984193"], ["updated_at", "2020-01-18 22:18:21.984193"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bridal dress alteration"], ["created_at", "2020-01-18 22:18:21.987045"], ["updated_at", "2020-01-18 22:18:21.987045"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (1.5ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Same-day"], ["created_at", "2020-01-18 22:18:21.989868"], ["updated_at", "2020-01-18 22:18:21.989868"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 1], ["description", "I am willing to travel within reason."], ["price", 50], ["created_at", "2020-01-18 22:18:21.994037"], ["updated_at", "2020-01-18 22:18:21.994037"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 2], ["description", "Willing to do quick alteration. I have alot of experience!"], ["price", 60], ["created_at", "2020-01-18 22:18:21.997330"], ["updated_at", "2020-01-18 22:18:21.997330"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["service_id", 4], ["description", "Totally possible to complete your alterations within the same day for an extra fee."], ["price", 50], ["created_at", "2020-01-18 22:18:22.000453"], ["updated_at", "2020-01-18 22:18:22.000453"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["service_id", 3], ["price", 100], ["created_at", "2020-01-18 22:18:22.003421"], ["updated_at", "2020-01-18 22:18:22.003421"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "12-01-2019"], ["created_at", "2020-01-18 22:18:22.006360"], ["updated_at", "2020-01-18 22:18:22.006360"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "11-30-2019"], ["created_at", "2020-01-18 22:18:22.009470"], ["updated_at", "2020-01-18 22:18:22.009470"], ["completed", false]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["tailor_id", 2], ["customer_id", 3], ["booking_date", "11-20-2019"], ["created_at", "2020-01-18 22:18:22.012854"], ["updated_at", "2020-01-18 22:18:22.012854"], ["completed", true], ["rating", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("sender_id", "receiver_id", "title", "body", "message_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["sender_id", 1], ["receiver_id", 2], ["title", "Quick question..."], ["body", "Hey! Would you be able to tailor some jeans in time for thanksgiving?"], ["message_date", "11-20-2019"], ["created_at", "2020-01-18 22:18:22.016003"], ["updated_at", "2020-01-18 22:18:22.016003"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.4ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.3ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserService Load (0.4ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Karina"], ["last_name", "Macancela"], ["email", "karymacancela@gmail.com"], ["created_at", "2020-01-18 22:19:06.493923"], ["updated_at", "2020-01-18 22:19:06.493923"], ["tailor", true], ["zipcode", "11211"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "mjones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Mark"], ["last_name", "Jones"], ["email", "mjones@gmail.com"], ["created_at", "2020-01-18 22:19:06.711195"], ["updated_at", "2020-01-18 22:19:06.711195"], ["tailor", true], ["zipcode", "10011"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ekim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Emily"], ["last_name", "Kim"], ["email", "ekim@gmail.com"], ["created_at", "2020-01-18 22:19:06.932417"], ["updated_at", "2020-01-18 22:19:06.932417"], ["tailor", false], ["zipcode", "11345"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2020-01-18 22:19:07.152021"], ["updated_at", "2020-01-18 22:19:07.152021"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waist alteration"], ["created_at", "2020-01-18 22:19:07.155097"], ["updated_at", "2020-01-18 22:19:07.155097"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bridal dress alteration"], ["created_at", "2020-01-18 22:19:07.157891"], ["updated_at", "2020-01-18 22:19:07.157891"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Same-day"], ["created_at", "2020-01-18 22:19:07.169754"], ["updated_at", "2020-01-18 22:19:07.169754"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 1], ["description", "I am willing to travel within reason."], ["price", 50], ["created_at", "2020-01-18 22:19:07.172792"], ["updated_at", "2020-01-18 22:19:07.172792"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 2], ["description", "Willing to do quick alteration. I have alot of experience!"], ["price", 60], ["created_at", "2020-01-18 22:19:07.175809"], ["updated_at", "2020-01-18 22:19:07.175809"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["service_id", 4], ["description", "Totally possible to complete your alterations within the same day for an extra fee."], ["price", 50], ["created_at", "2020-01-18 22:19:07.178713"], ["updated_at", "2020-01-18 22:19:07.178713"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["service_id", 3], ["price", 100], ["created_at", "2020-01-18 22:19:07.181762"], ["updated_at", "2020-01-18 22:19:07.181762"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "12-01-2019"], ["created_at", "2020-01-18 22:19:07.184940"], ["updated_at", "2020-01-18 22:19:07.184940"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "11-30-2019"], ["created_at", "2020-01-18 22:19:07.189304"], ["updated_at", "2020-01-18 22:19:07.189304"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["tailor_id", 2], ["customer_id", 3], ["booking_date", "11-20-2019"], ["created_at", "2020-01-18 22:19:07.192343"], ["updated_at", "2020-01-18 22:19:07.192343"], ["completed", true], ["rating", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("sender_id", "receiver_id", "title", "body", "message_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["sender_id", 1], ["receiver_id", 2], ["title", "Quick question..."], ["body", "Hey! Would you be able to tailor some jeans in time for thanksgiving?"], ["message_date", "11-20-2019"], ["created_at", "2020-01-18 22:19:07.195194"], ["updated_at", "2020-01-18 22:19:07.195194"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.4ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.3ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserService Load (0.5ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Karina"], ["last_name", "Macancela"], ["email", "karymacancela@gmail.com"], ["created_at", "2020-01-18 22:19:40.559373"], ["updated_at", "2020-01-18 22:19:40.559373"], ["tailor", true], ["zipcode", "11211"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "mjones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Mark"], ["last_name", "Jones"], ["email", "mjones@gmail.com"], ["created_at", "2020-01-18 22:19:40.777368"], ["updated_at", "2020-01-18 22:19:40.777368"], ["tailor", true], ["zipcode", "10011"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ekim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Emily"], ["last_name", "Kim"], ["email", "ekim@gmail.com"], ["created_at", "2020-01-18 22:19:40.995299"], ["updated_at", "2020-01-18 22:19:40.995299"], ["tailor", false], ["zipcode", "11345"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2020-01-18 22:19:41.210778"], ["updated_at", "2020-01-18 22:19:41.210778"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waist alteration"], ["created_at", "2020-01-18 22:19:41.214128"], ["updated_at", "2020-01-18 22:19:41.214128"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bridal dress alteration"], ["created_at", "2020-01-18 22:19:41.217532"], ["updated_at", "2020-01-18 22:19:41.217532"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Same-day"], ["created_at", "2020-01-18 22:19:41.232288"], ["updated_at", "2020-01-18 22:19:41.232288"]]
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.4ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 1], ["description", "I am willing to travel within reason."], ["price", 50], ["created_at", "2020-01-18 22:19:41.243174"], ["updated_at", "2020-01-18 22:19:41.243174"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.4ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 2], ["description", "Willing to do quick alteration. I have alot of experience!"], ["price", 60], ["created_at", "2020-01-18 22:19:41.249271"], ["updated_at", "2020-01-18 22:19:41.249271"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["service_id", 4], ["description", "Totally possible to complete your alterations within the same day for an extra fee."], ["price", 50], ["created_at", "2020-01-18 22:19:41.252470"], ["updated_at", "2020-01-18 22:19:41.252470"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["service_id", 3], ["price", 100], ["created_at", "2020-01-18 22:19:41.255455"], ["updated_at", "2020-01-18 22:19:41.255455"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "12-01-2019"], ["created_at", "2020-01-18 22:19:41.258593"], ["updated_at", "2020-01-18 22:19:41.258593"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "11-30-2019"], ["created_at", "2020-01-18 22:19:41.261578"], ["updated_at", "2020-01-18 22:19:41.261578"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["tailor_id", 2], ["customer_id", 3], ["booking_date", "11-20-2019"], ["created_at", "2020-01-18 22:19:41.264591"], ["updated_at", "2020-01-18 22:19:41.264591"], ["completed", true], ["rating", 3]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("sender_id", "receiver_id", "title", "body", "message_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["sender_id", 1], ["receiver_id", 2], ["title", "Quick question..."], ["body", "Hey! Would you be able to tailor some jeans in time for thanksgiving?"], ["message_date", "11-20-2019"], ["created_at", "2020-01-18 22:19:41.268558"], ["updated_at", "2020-01-18 22:19:41.268558"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.4ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.3ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserService Load (0.6ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Karina"], ["last_name", "Macancela"], ["email", "karymacancela@gmail.com"], ["created_at", "2020-01-18 22:20:25.857067"], ["updated_at", "2020-01-18 22:20:25.857067"], ["tailor", true], ["zipcode", "11211"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "mjones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Mark"], ["last_name", "Jones"], ["email", "mjones@gmail.com"], ["created_at", "2020-01-18 22:20:26.083085"], ["updated_at", "2020-01-18 22:20:26.083085"], ["tailor", true], ["zipcode", "10011"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ekim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Emily"], ["last_name", "Kim"], ["email", "ekim@gmail.com"], ["created_at", "2020-01-18 22:20:26.300166"], ["updated_at", "2020-01-18 22:20:26.300166"], ["tailor", false], ["zipcode", "11345"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.4ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2020-01-18 22:20:26.515651"], ["updated_at", "2020-01-18 22:20:26.515651"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waist alteration"], ["created_at", "2020-01-18 22:20:26.518847"], ["updated_at", "2020-01-18 22:20:26.518847"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bridal dress alteration"], ["created_at", "2020-01-18 22:20:26.521708"], ["updated_at", "2020-01-18 22:20:26.521708"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.2ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Same-day"], ["created_at", "2020-01-18 22:20:26.524468"], ["updated_at", "2020-01-18 22:20:26.524468"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 1], ["description", "I am willing to travel within reason."], ["price", 50], ["created_at", "2020-01-18 22:20:26.527367"], ["updated_at", "2020-01-18 22:20:26.527367"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 2], ["description", "Willing to do quick alteration. I have alot of experience!"], ["price", 60], ["created_at", "2020-01-18 22:20:26.530586"], ["updated_at", "2020-01-18 22:20:26.530586"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["service_id", 4], ["description", "Totally possible to complete your alterations within the same day for an extra fee."], ["price", 50], ["created_at", "2020-01-18 22:20:26.533827"], ["updated_at", "2020-01-18 22:20:26.533827"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["service_id", 3], ["price", 100], ["created_at", "2020-01-18 22:20:26.536782"], ["updated_at", "2020-01-18 22:20:26.536782"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "12-01-2019"], ["created_at", "2020-01-18 22:20:26.540167"], ["updated_at", "2020-01-18 22:20:26.540167"], ["completed", false]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "11-30-2019"], ["created_at", "2020-01-18 22:20:26.543158"], ["updated_at", "2020-01-18 22:20:26.543158"], ["completed", false]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["tailor_id", 2], ["customer_id", 3], ["booking_date", "11-20-2019"], ["created_at", "2020-01-18 22:20:26.546040"], ["updated_at", "2020-01-18 22:20:26.546040"], ["completed", true], ["rating", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("sender_id", "receiver_id", "title", "body", "message_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["sender_id", 1], ["receiver_id", 2], ["title", "Quick question..."], ["body", "Hey! Would you be able to tailor some jeans in time for thanksgiving?"], ["message_date", "11-20-2019"], ["created_at", "2020-01-18 22:20:26.548999"], ["updated_at", "2020-01-18 22:20:26.548999"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.4ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.3ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserService Load (0.5ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Karina"], ["last_name", "Macancela"], ["email", "karymacancela@gmail.com"], ["created_at", "2020-01-18 22:21:08.394682"], ["updated_at", "2020-01-18 22:21:08.394682"], ["tailor", true], ["zipcode", "11211"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUserService Load (0.8ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mService Load (0.6ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Karina"], ["last_name", "Macancela"], ["email", "karymacancela@gmail.com"], ["created_at", "2020-01-18 22:22:38.250239"], ["updated_at", "2020-01-18 22:22:38.250239"], ["tailor", true], ["zipcode", "11211"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUserService Load (0.5ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Karina"], ["last_name", "Macancela"], ["email", "karymacancela@gmail.com"], ["created_at", "2020-01-18 22:24:54.851795"], ["updated_at", "2020-01-18 22:24:54.851795"], ["tailor", true], ["zipcode", "11211"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "mjones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Mark"], ["last_name", "Jones"], ["email", "mjones@gmail.com"], ["created_at", "2020-01-18 22:24:55.076613"], ["updated_at", "2020-01-18 22:24:55.076613"], ["tailor", true], ["zipcode", "10011"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ekim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Emily"], ["last_name", "Kim"], ["email", "ekim@gmail.com"], ["created_at", "2020-01-18 22:24:55.293439"], ["updated_at", "2020-01-18 22:24:55.293439"], ["tailor", false], ["zipcode", "11345"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2020-01-18 22:24:55.512356"], ["updated_at", "2020-01-18 22:24:55.512356"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waist alteration"], ["created_at", "2020-01-18 22:24:55.515498"], ["updated_at", "2020-01-18 22:24:55.515498"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bridal dress alteration"], ["created_at", "2020-01-18 22:24:55.518374"], ["updated_at", "2020-01-18 22:24:55.518374"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Same-day"], ["created_at", "2020-01-18 22:24:55.521282"], ["updated_at", "2020-01-18 22:24:55.521282"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 1], ["description", "I am willing to travel within reason."], ["price", 50], ["created_at", "2020-01-18 22:24:55.529678"], ["updated_at", "2020-01-18 22:24:55.529678"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 2], ["description", "Willing to do quick alteration. I have alot of experience!"], ["price", 60], ["created_at", "2020-01-18 22:24:55.532781"], ["updated_at", "2020-01-18 22:24:55.532781"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["service_id", 4], ["description", "Totally possible to complete your alterations within the same day for an extra fee."], ["price", 50], ["created_at", "2020-01-18 22:24:55.536029"], ["updated_at", "2020-01-18 22:24:55.536029"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["service_id", 3], ["price", 100], ["created_at", "2020-01-18 22:24:55.539153"], ["updated_at", "2020-01-18 22:24:55.539153"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "12-01-2019"], ["created_at", "2020-01-18 22:24:55.547555"], ["updated_at", "2020-01-18 22:24:55.547555"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "11-30-2019"], ["created_at", "2020-01-18 22:24:55.550734"], ["updated_at", "2020-01-18 22:24:55.550734"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["tailor_id", 2], ["customer_id", 3], ["booking_date", "11-20-2019"], ["created_at", "2020-01-18 22:24:55.553719"], ["updated_at", "2020-01-18 22:24:55.553719"], ["completed", true], ["rating", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("sender_id", "receiver_id", "title", "body", "message_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["sender_id", 1], ["receiver_id", 2], ["title", "Quick question..."], ["body", "Hey! Would you be able to tailor some jeans in time for thanksgiving?"], ["message_date", "11-20-2019"], ["created_at", "2020-01-18 22:24:55.570137"], ["updated_at", "2020-01-18 22:24:55.570137"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.4ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.3ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserService Load (0.5ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Karina"], ["last_name", "Macancela"], ["email", "karymacancela@gmail.com"], ["created_at", "2020-01-18 22:33:17.561179"], ["updated_at", "2020-01-18 22:33:17.561179"], ["tailor", true], ["zipcode", "11211"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "mjones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Mark"], ["last_name", "Jones"], ["email", "mjones@gmail.com"], ["created_at", "2020-01-18 22:33:17.787462"], ["updated_at", "2020-01-18 22:33:17.787462"], ["tailor", true], ["zipcode", "10011"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ekim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Emily"], ["last_name", "Kim"], ["email", "ekim@gmail.com"], ["created_at", "2020-01-18 22:33:18.009220"], ["updated_at", "2020-01-18 22:33:18.009220"], ["tailor", false], ["zipcode", "11345"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2020-01-18 22:33:18.224484"], ["updated_at", "2020-01-18 22:33:18.224484"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waist alteration"], ["created_at", "2020-01-18 22:33:18.227707"], ["updated_at", "2020-01-18 22:33:18.227707"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bridal dress alteration"], ["created_at", "2020-01-18 22:33:18.230783"], ["updated_at", "2020-01-18 22:33:18.230783"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Same-day"], ["created_at", "2020-01-18 22:33:18.233732"], ["updated_at", "2020-01-18 22:33:18.233732"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 1], ["description", "I am willing to travel within reason."], ["price", 50], ["created_at", "2020-01-18 22:33:18.236666"], ["updated_at", "2020-01-18 22:33:18.236666"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 2], ["description", "Willing to do quick alteration. I have alot of experience!"], ["price", 60], ["created_at", "2020-01-18 22:33:18.239775"], ["updated_at", "2020-01-18 22:33:18.239775"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["service_id", 4], ["description", "Totally possible to complete your alterations within the same day for an extra fee."], ["price", 50], ["created_at", "2020-01-18 22:33:18.242823"], ["updated_at", "2020-01-18 22:33:18.242823"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["service_id", 3], ["price", 100], ["created_at", "2020-01-18 22:33:18.246134"], ["updated_at", "2020-01-18 22:33:18.246134"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "12-01-2019"], ["created_at", "2020-01-18 22:33:18.249236"], ["updated_at", "2020-01-18 22:33:18.249236"], ["completed", false]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "11-30-2019"], ["created_at", "2020-01-18 22:33:18.252163"], ["updated_at", "2020-01-18 22:33:18.252163"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["tailor_id", 2], ["customer_id", 3], ["booking_date", "11-20-2019"], ["created_at", "2020-01-18 22:33:18.255099"], ["updated_at", "2020-01-18 22:33:18.255099"], ["completed", true], ["rating", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("sender_id", "receiver_id", "title", "body", "message_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["sender_id", 1], ["receiver_id", 2], ["title", "Quick question..."], ["body", "Hey! Would you be able to tailor some jeans in time for thanksgiving?"], ["message_date", "11-20-2019"], ["created_at", "2020-01-18 22:33:18.258094"], ["updated_at", "2020-01-18 22:33:18.258094"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.4ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.3ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserService Load (0.5ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Karina"], ["last_name", "Macancela"], ["email", "karymacancela@gmail.com"], ["created_at", "2020-01-19 00:01:01.722321"], ["updated_at", "2020-01-19 00:01:01.722321"], ["tailor", true], ["zipcode", "11211"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "mjones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Mark"], ["last_name", "Jones"], ["email", "mjones@gmail.com"], ["created_at", "2020-01-19 00:01:01.948510"], ["updated_at", "2020-01-19 00:01:01.948510"], ["tailor", true], ["zipcode", "10011"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ekim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Emily"], ["last_name", "Kim"], ["email", "ekim@gmail.com"], ["created_at", "2020-01-19 00:01:02.166222"], ["updated_at", "2020-01-19 00:01:02.166222"], ["tailor", false], ["zipcode", "11345"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2020-01-19 00:01:02.382656"], ["updated_at", "2020-01-19 00:01:02.382656"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waist alteration"], ["created_at", "2020-01-19 00:01:02.386024"], ["updated_at", "2020-01-19 00:01:02.386024"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bridal dress alteration"], ["created_at", "2020-01-19 00:01:02.388912"], ["updated_at", "2020-01-19 00:01:02.388912"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Same-day"], ["created_at", "2020-01-19 00:01:02.391758"], ["updated_at", "2020-01-19 00:01:02.391758"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 1], ["description", "I am willing to travel within reason."], ["price", 50], ["created_at", "2020-01-19 00:01:02.394862"], ["updated_at", "2020-01-19 00:01:02.394862"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 2], ["description", "Willing to do quick alteration. I have alot of experience!"], ["price", 60], ["created_at", "2020-01-19 00:01:02.398467"], ["updated_at", "2020-01-19 00:01:02.398467"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["service_id", 4], ["description", "Totally possible to complete your alterations within the same day for an extra fee."], ["price", 50], ["created_at", "2020-01-19 00:01:02.401358"], ["updated_at", "2020-01-19 00:01:02.401358"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["service_id", 3], ["price", 100], ["created_at", "2020-01-19 00:01:02.404586"], ["updated_at", "2020-01-19 00:01:02.404586"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "12-01-2019"], ["created_at", "2020-01-19 00:01:02.407561"], ["updated_at", "2020-01-19 00:01:02.407561"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "11-30-2019"], ["created_at", "2020-01-19 00:01:02.410633"], ["updated_at", "2020-01-19 00:01:02.410633"], ["completed", false]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["tailor_id", 2], ["customer_id", 3], ["booking_date", "11-20-2019"], ["created_at", "2020-01-19 00:01:02.414095"], ["updated_at", "2020-01-19 00:01:02.414095"], ["completed", true], ["rating", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("sender_id", "receiver_id", "title", "body", "message_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["sender_id", 1], ["receiver_id", 2], ["title", "Quick question..."], ["body", "Hey! Would you be able to tailor some jeans in time for thanksgiving?"], ["message_date", "11-20-2019"], ["created_at", "2020-01-19 00:01:02.417242"], ["updated_at", "2020-01-19 00:01:02.417242"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.4ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.3ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserService Load (0.5ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Karina"], ["last_name", "Macancela"], ["email", "karymacancela@gmail.com"], ["created_at", "2020-01-19 00:01:24.479716"], ["updated_at", "2020-01-19 00:01:24.479716"], ["tailor", true], ["zipcode", "11211"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "mjones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Mark"], ["last_name", "Jones"], ["email", "mjones@gmail.com"], ["created_at", "2020-01-19 00:01:24.706131"], ["updated_at", "2020-01-19 00:01:24.706131"], ["tailor", true], ["zipcode", "10011"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ekim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Emily"], ["last_name", "Kim"], ["email", "ekim@gmail.com"], ["created_at", "2020-01-19 00:01:24.923134"], ["updated_at", "2020-01-19 00:01:24.923134"], ["tailor", false], ["zipcode", "11345"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2020-01-19 00:01:25.139615"], ["updated_at", "2020-01-19 00:01:25.139615"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.4ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waist alteration"], ["created_at", "2020-01-19 00:01:25.149137"], ["updated_at", "2020-01-19 00:01:25.149137"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bridal dress alteration"], ["created_at", "2020-01-19 00:01:25.153077"], ["updated_at", "2020-01-19 00:01:25.153077"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Same-day"], ["created_at", "2020-01-19 00:01:25.156423"], ["updated_at", "2020-01-19 00:01:25.156423"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 1], ["description", "I am willing to travel within reason."], ["price", 50], ["created_at", "2020-01-19 00:01:25.159306"], ["updated_at", "2020-01-19 00:01:25.159306"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 2], ["description", "Willing to do quick alteration. I have alot of experience!"], ["price", 60], ["created_at", "2020-01-19 00:01:25.162411"], ["updated_at", "2020-01-19 00:01:25.162411"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["service_id", 4], ["description", "Totally possible to complete your alterations within the same day for an extra fee."], ["price", 50], ["created_at", "2020-01-19 00:01:25.165483"], ["updated_at", "2020-01-19 00:01:25.165483"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["service_id", 3], ["price", 100], ["created_at", "2020-01-19 00:01:25.168319"], ["updated_at", "2020-01-19 00:01:25.168319"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "12-01-2019"], ["created_at", "2020-01-19 00:01:25.171289"], ["updated_at", "2020-01-19 00:01:25.171289"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "11-30-2019"], ["created_at", "2020-01-19 00:01:25.174402"], ["updated_at", "2020-01-19 00:01:25.174402"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["tailor_id", 2], ["customer_id", 3], ["booking_date", "11-20-2019"], ["created_at", "2020-01-19 00:01:25.177300"], ["updated_at", "2020-01-19 00:01:25.177300"], ["completed", true], ["rating", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("sender_id", "receiver_id", "title", "body", "message_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["sender_id", 1], ["receiver_id", 2], ["title", "Quick question..."], ["body", "Hey! Would you be able to tailor some jeans in time for thanksgiving?"], ["message_date", "11-20-2019"], ["created_at", "2020-01-19 00:01:25.180193"], ["updated_at", "2020-01-19 00:01:25.180193"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/login" for ::1 at 2020-01-18 19:04:44 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 1886716ms (ActiveRecord: 22.7ms | Allocations: 40202)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:5:in `create'
+Started POST "/login" for ::1 at 2020-01-18 19:37:36 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"kaaa", "password"=>"[FILTERED]", "login"=>{"email"=>"kaaa", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'kaaa') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 13ms (Views: 2.8ms | ActiveRecord: 2.7ms | Allocations: 4889)
+
+
+Started POST "/login" for ::1 at 2020-01-18 19:37:43 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 4.2ms | Allocations: 7084)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
