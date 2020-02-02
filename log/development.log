@@ -51181,3 +51181,491 @@ NoMethodError (undefined method `[]' for nil:NilClass):
   
 app/models/user.rb:20:in `authenticate'
 app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 02:29:59 -0500
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 29.6ms | Allocations: 10711)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 02:31:38 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.co", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.co') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 11ms (Views: 8.4ms | ActiveRecord: 0.5ms | Allocations: 2952)
+
+
+Started POST "/login" for ::1 at 2020-02-01 02:42:27 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.0ms | Allocations: 1230)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 02:44:49 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 9.9ms | Allocations: 9800)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 02:45:30 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 6.4ms | Allocations: 10710)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 02:46:05 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 6.7ms | Allocations: 9716)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 02:46:36 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 5.2ms | Allocations: 9716)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 02:47:56 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 7.3ms | Allocations: 10803)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 02:49:18 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 8.8ms | Allocations: 10803)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 02:50:15 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 48440484ms (ActiveRecord: 14.8ms | Allocations: 40161)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 16:21:44 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 8.0ms | Allocations: 10800)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 16:22:42 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 1160)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 16:23:02 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 4.6ms | Allocations: 9732)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 16:23:42 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 1.0ms | Allocations: 1160)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 16:24:21 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 7.7ms | Allocations: 10800)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 16:25:16 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 250719ms (ActiveRecord: 7.5ms | Allocations: 40331)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:21:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 16:31:23 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 6.6ms | Allocations: 10798)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:20:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2020-02-01 16:39:37 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 7.4ms | Allocations: 10952)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:18:in `authenticate'
+app/controllers/login_controller.rb:4:in `create'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (16.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (4.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.9ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (2.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.9ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserService Load (2.7ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Destroy (1.4ms)[0m  [1m[31mDELETE FROM "user_services" WHERE "user_services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Load (0.2ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services" WHERE "user_services"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mService Load (1.2ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.3ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUserService Load (0.5ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mService Load (0.7ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUserService Load (0.6ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mService Load (1.4ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUserService Load (0.6ms)[0m  [1m[34mSELECT "user_services".* FROM "user_services"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "karymacancela@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (36.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "Karina"], ["last_name", "Macancela"], ["email", "karymacancela@gmail.com"], ["password_digest", "$2a$12$mZNyvReTUhx5VGc6QAD6t.$2a$12$mZNyvReTUhx5VGc6QAD6t.wDbDprQgbL2UhKfV79RLbvRxMJOczlC"], ["created_at", "2020-02-01 21:58:34.021940"], ["updated_at", "2020-02-01 21:58:34.021940"], ["tailor", true], ["zipcode", "11211"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "mjones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "Mark"], ["last_name", "Jones"], ["email", "mjones@gmail.com"], ["password_digest", "$2a$12$usq9QSAKrlYfO1om0imVGe$2a$12$usq9QSAKrlYfO1om0imVGeMuSxPv7aDNqAu0FdIuT4VYsh9VYNc7K"], ["created_at", "2020-02-01 21:58:34.275650"], ["updated_at", "2020-02-01 21:58:34.275650"], ["tailor", true], ["zipcode", "10011"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (6.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ekim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "tailor", "zipcode", "bio") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "Emily"], ["last_name", "Kim"], ["email", "ekim@gmail.com"], ["password_digest", "$2a$12$5M/pfTYN2josZoVj/hQPge$2a$12$5M/pfTYN2josZoVj/hQPge8R1Bz54uaH3gfEszSpwfCt0Wu3z15Zu"], ["created_at", "2020-02-01 21:58:34.499616"], ["updated_at", "2020-02-01 21:58:34.499616"], ["tailor", false], ["zipcode", "11345"], ["bio", "Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here. Some description here."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2020-02-01 21:58:34.506464"], ["updated_at", "2020-02-01 21:58:34.506464"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waist alteration"], ["created_at", "2020-02-01 21:58:34.509607"], ["updated_at", "2020-02-01 21:58:34.509607"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bridal dress alteration"], ["created_at", "2020-02-01 21:58:34.522808"], ["updated_at", "2020-02-01 21:58:34.522808"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Same-day"], ["created_at", "2020-02-01 21:58:34.525741"], ["updated_at", "2020-02-01 21:58:34.525741"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (1.0ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 1], ["description", "I am willing to travel within reason."], ["price", 50], ["created_at", "2020-02-01 21:58:34.535495"], ["updated_at", "2020-02-01 21:58:34.535495"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["service_id", 2], ["description", "Willing to do quick alteration. I have alot of experience!"], ["price", 60], ["created_at", "2020-02-01 21:58:34.540216"], ["updated_at", "2020-02-01 21:58:34.540216"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "description", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["service_id", 4], ["description", "Totally possible to complete your alterations within the same day for an extra fee."], ["price", 50], ["created_at", "2020-02-01 21:58:34.543414"], ["updated_at", "2020-02-01 21:58:34.543414"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserService Create (0.3ms)[0m  [1m[32mINSERT INTO "user_services" ("user_id", "service_id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["service_id", 3], ["price", 100], ["created_at", "2020-02-01 21:58:34.546284"], ["updated_at", "2020-02-01 21:58:34.546284"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.6ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "12-01-2019"], ["created_at", "2020-02-01 21:58:34.554944"], ["updated_at", "2020-02-01 21:58:34.554944"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["tailor_id", 1], ["customer_id", 3], ["booking_date", "11-30-2019"], ["created_at", "2020-02-01 21:58:34.558415"], ["updated_at", "2020-02-01 21:58:34.558415"], ["completed", false]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("tailor_id", "customer_id", "booking_date", "created_at", "updated_at", "completed", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["tailor_id", 2], ["customer_id", 3], ["booking_date", "11-20-2019"], ["created_at", "2020-02-01 21:58:34.561472"], ["updated_at", "2020-02-01 21:58:34.561472"], ["completed", true], ["rating", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("sender_id", "receiver_id", "title", "body", "message_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["sender_id", 1], ["receiver_id", 2], ["title", "Quick question..."], ["body", "Hey! Would you be able to tailor some jeans in time for thanksgiving?"], ["message_date", "11-20-2019"], ["created_at", "2020-02-01 21:58:34.570097"], ["updated_at", "2020-02-01 21:58:34.570097"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/login" for ::1 at 2020-02-01 17:00:22 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.46ms)
+Completed 422 Unprocessable Entity in 282ms (Views: 2.7ms | ActiveRecord: 9.4ms | Allocations: 10952)
+
+
+Started POST "/login" for ::1 at 2020-02-01 17:00:51 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.co", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.co') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 877)
+
+
+Started POST "/login" for ::1 at 2020-02-01 17:06:46 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 422 Unprocessable Entity in 274ms (Views: 2.1ms | ActiveRecord: 8.6ms | Allocations: 10950)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/login" for ::1 at 2020-02-01 17:08:41 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 422 Unprocessable Entity in 276ms (Views: 2.0ms | ActiveRecord: 9.1ms | Allocations: 10947)
+
+
+Started POST "/login" for ::1 at 2020-02-01 17:09:10 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 250ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 904)
+
+
+Started POST "/login" for ::1 at 2020-02-01 17:13:03 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 422 Unprocessable Entity in 252ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 887)
+
+
+Started POST "/login" for ::1 at 2020-02-01 17:17:03 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 422 Unprocessable Entity in 245ms (Views: 2.1ms | ActiveRecord: 8.2ms | Allocations: 10948)
+
+
+Started POST "/login" for ::1 at 2020-02-01 19:15:49 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.01ms)
+Completed 422 Unprocessable Entity in 232ms (Views: 2.9ms | ActiveRecord: 1.0ms | Allocations: 970)
+
+
+Started POST "/login" for ::1 at 2020-02-01 22:57:24 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 422 Unprocessable Entity in 340ms (Views: 93.2ms | ActiveRecord: 8.4ms | Allocations: 10948)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (25.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/login" for ::1 at 2020-02-01 23:10:16 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 422 Unprocessable Entity in 250ms (Views: 1.8ms | ActiveRecord: 9.5ms | Allocations: 10947)
+
+
+Started POST "/login" for ::1 at 2020-02-01 23:10:29 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 240ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 987)
+
+
+Started POST "/login" for ::1 at 2020-02-01 23:10:40 -0500
+Processing by LoginController#create as JSON
+  Parameters: {"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]", "login"=>{"email"=>"karymacancela@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(email) = 'karymacancela@gmail.com') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 232ms (Views: 0.6ms | ActiveRecord: 1.8ms | Allocations: 986)
+
+
