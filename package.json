@@ -15,5 +15,8 @@
     "client/node_modules"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react-cookie": "^4.0.3"
+  }
 }

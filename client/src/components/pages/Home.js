@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,9 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+
+import AuthContext from "../../context/Auth/auth";
+import { navigate } from "hookrouter";
 
 function Copyright() {
   return (
@@ -56,26 +59,60 @@ const useStyles = makeStyles(theme => ({
 
 export default function Home() {
   const classes = useStyles();
-  const [email, setEmail] = useState(null)
-  const [password, setPassword] = useState(null)
+  const context = useContext(AuthContext);
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [token, setToken] = useState('')
+
+  const [status, setStatus] = useState({
+    color: "black",
+    status: ""
+  });
+
+  useEffect(() => {
+    console.log("Login context:", context);
+    if (context.token) {
+      navigate("/index");
+    }
+
+    if (context.error) {
+      setStatus({
+        color: "red",
+        status: context.error
+      });
+    }
+  }, [context.token, context.error]);
 
   function login(e) {
     e.preventDefault();
-    let email = e.target.email.value;
-    let password = e.target.password.value;
-    console.log(email, password);
-    fetch("/login", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({ email, password })
-    })
-    .then(r => r.json())
-    .then(res => {
-      console.log("res?: ", res)
-    })
+
+    setStatus({
+      color: "blue",
+      status: "Validating"
+    });
+
+    context.login(email, password);
+
+    // let email = e.target.email.value;
+    // let password = e.target.password.value;
+    // console.log(email, password);
+    // fetch("/login", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-type": "application/json",
+    //     "Accept": "application/json"
+    //   },
+    //   body: JSON.stringify({ email, password })
+    // })
+    // .then(r => r.json())
+    // .then(res => {
+    //   console.log("res?: ", res)
+    //   if(res.token !== '') {
+    //     console.log('adding token...')
+    //     setToken(res.token)
+    //     // localStorage.token = res.token
+    //   }
+    // })
   }
 
   return (
@@ -101,6 +138,8 @@ export default function Home() {
               name="email"
               autoComplete="email"
               autoFocus
+              value={email}
+              onChange={e => setEmail(e.target.value)}
             />
             <TextField
               variant="outlined"
@@ -112,11 +151,14 @@ export default function Home() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
+            <p style={{ color: status.color }}>{status.status}</p>
             <Button
               type="submit"
               fullWidth
