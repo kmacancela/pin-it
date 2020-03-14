@@ -4,14 +4,11 @@ import { useCookies } from "react-cookie";
 
 const AuthContextWrapper = props => {
   const [cookies, setCookie] = useCookies(["token"]);
-
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   const loginFunction = (email, password) => {
     setLoading(true);
-
-    console.log(email, password);
     setTimeout(() => {
       fetch("/login", {
         method: "POST",
@@ -28,8 +25,6 @@ const AuthContextWrapper = props => {
           console.log('user found...')
           setCookie("token", res.token);
           setError("");
-          // setToken(res.token)
-          // localStorage.token = res.token
         } else {
           setError("Wrong credentials");
         }

@@ -70,7 +70,6 @@ export default function Home() {
   });
 
   useEffect(() => {
-    console.log("Login context:", context);
     if (context.token) {
       navigate("/index");
     }
@@ -92,27 +91,6 @@ export default function Home() {
     });
 
     context.login(email, password);
-
-    // let email = e.target.email.value;
-    // let password = e.target.password.value;
-    // console.log(email, password);
-    // fetch("/login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-type": "application/json",
-    //     "Accept": "application/json"
-    //   },
-    //   body: JSON.stringify({ email, password })
-    // })
-    // .then(r => r.json())
-    // .then(res => {
-    //   console.log("res?: ", res)
-    //   if(res.token !== '') {
-    //     console.log('adding token...')
-    //     setToken(res.token)
-    //     // localStorage.token = res.token
-    //   }
-    // })
   }
 
   return (

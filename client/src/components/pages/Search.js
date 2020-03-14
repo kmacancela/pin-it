@@ -11,10 +11,10 @@ const styles = {
   }
 }
 
-export default function Search(props) {
-  if(props.success) {
-    props.revert()
-  }
+export default function Search() {
+  // if(props.success) {
+  //   props.revert()
+  // }
 
   return (
     <Grid container style={styles.Paper}>
@@ -22,7 +22,7 @@ export default function Search(props) {
         <LeftPane />
       </Grid>
       <Grid item sm={9}>
-        <RightPane xprops={props.xprops} tailors={ props.tailors } resetSpecs={props.resetSpecs} specs={props.specs} showSpecs={props.showSpecs} />
+        Right pane should go here...
       </Grid>
     </Grid>
   )
